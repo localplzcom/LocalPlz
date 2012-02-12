@@ -6,3 +6,8 @@ database-backed web applications according to the Model-View-Control pattern.
 == Milestones:
 
 1. Initial Commit (2/11/2012)
+
+== Branches:
+
+master
+alex
