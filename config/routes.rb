@@ -1,4 +1,9 @@
 Localplz::Application.routes.draw do
+  get "front/index"
+  root :to => 'front#index'
+  get "users/new"
+  match '/signup', to:'users#new'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
