@@ -9,14 +9,14 @@
   <title>LocalPLZ.com</title>
   <meta name="description" content="LocalPLZ shows not only the best specials around your location, but what your friends are saying">
   <meta name="viewport" content="width=device-width">
-  <!-- <%= stylesheet_link_tag    "application", :media => "all" %> -->
   <%= stylesheet_link_tag 'bootstrap/bootstrap.min', media: 'screen' %>
+  <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    "front", :media => "screen" %>
   <!-- <%= javascript_include_tag "application" %> -->
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <%= yield %>
-<%= debug(params) if Rails.env.development? %>
 </body>
 </html>
