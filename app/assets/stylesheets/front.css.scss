@@ -2,13 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
-  padding-top: 40px;
+  padding-top: 48px;
+  background-color: #EFEFEF;
 }
 .navbar-inner {
   background-image: none;
   background-color: white;
   box-shadow: none;
-  border-bottom: 2px solid #cccccc;
+  box-shadow: 1px 1px 4px #ccc;
+}
+
+.span8 {
+  
+}
+
+.well {
+  background-color: white;
 }
 
 h2 {

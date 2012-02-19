@@ -2,7 +2,7 @@
   <div class="navbar-inner">
     <div class="container">
     	<div class="row">
-    		<div class="span4">
+    		<div class="span5">
     			<h2>LocalPLZ.com</h2>
         	</div>
         	<div class="span5">
@@ -13,13 +13,13 @@
 	            </div>
           		</div>
         	</div>
-        <div class="span3">
+        <div class="span2">
         	<% if signed_in? %>
 	 		<%= current_user.email %>
         	<%= link_to "Sign out", signout_path, method: :delete %>
         	<% end %>
         <a class="btn btn-small" href="/signin"><i class="icon-user icon-black"></i>Sign In</a>
-        <a class="btn btn-small btn-info" href="#"><i class="icon-info-sign icon-white"></i> More Info</a>
+        <a class="btn btn-small btn-info" href="#"><i class="icon-info-sign icon-white"></i>About</a>
         </div>
         </div>
     </div>
