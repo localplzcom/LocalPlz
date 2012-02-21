@@ -6,7 +6,13 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:session][:email])
     if user && user.authenticate(params[:session][:password])
       sign_in user
-      redirect_to root_path
+      # If the user is a regular user
+      #if user.type == 0
+        redirect_to root_path
+      # If the user is a business user  
+      #else
+        #redirect_to :admin=>:index
+      #end
     else
       @error = 'Incorrect username / password combination.'
       render 'new'
