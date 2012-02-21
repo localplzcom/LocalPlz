@@ -1,4 +1,6 @@
 Localplz::Application.routes.draw do
+  get "admin/index"
+
   get "front/index"
   root :to => 'front#index'
   resources :sessions, only: [:new, :create, :destroy]
@@ -7,6 +9,7 @@ Localplz::Application.routes.draw do
   match '/signup', to:'users#new'
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy'
+  match '/admin', to: 'admin#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
