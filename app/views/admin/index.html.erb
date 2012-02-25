@@ -3,20 +3,98 @@
 	<div class="row">
 	<div class="span3">
 		<div class="well">
-        <ul class="nav nav-list">
-          <li class="nav-header">List header</li>
-          <li class="active"><a href="#"><i class="icon-white icon-home"></i> Home</a></li>
-          <li><a href="#"><i class="icon-book"></i> Library</a></li>
-          <li><a href="#"><i class="icon-pencil"></i> Applications</a></li>
-          <li class="nav-header">Another list header</li>
-          <li><a href="#"><i class="icon-user"></i> Profile</a></li>
-          <li><a href="#"><i class="icon-cog"></i> Settings</a></li>
-          <li><a href="#"><i class="icon-flag"></i> Help</a></li>
-        </ul>
+        	<a href="#">Home</a> |
+        	<a href="#">Listing Information</a>
       </div>
 	</div>
 	<div class="span9">
-		form
-	</div>
-	</div>
+		<h1>Post Special</h1>
+			<%= form_for(:special, url: admin_path) do |f| %>
+		 	<fieldset>
+        
+            <label for="special">Special Title</label>
+            <input class="xlarge" id="special" name="special" size="30" type="text" />
+   
+            <label for="description">Special Description</label>
+            <textarea class="xxlarge" id="description" name="description" rows="3"></textarea>
+            
+
+            <label for="terms">Special Terms</label>
+            <textarea class="xxlarge" id="terms" name="textarea2" rows="3"></textarea>
+                If there are no terms, this will default to: "None, Enjoy!".
+          
+          <!-- Scheduling Options -->
+            <label id="optionsRadio">Scheduling Options</label>
+              <ul class="inputs-list">
+                <li>
+                  <label>
+                    <input type="radio" checked="checked" name="options" id="repeating_box" value="1" />
+                    <span>Schedule Repeating Special</span>
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input type="radio" name="options" id="one_time_box" value="0" />
+                    <span>Schedule One Time Special</span>
+                  </label>
+                </li>
+              </ul>
+       
+            <label id="optionsCheckboxes">Repeat Every:</label>
+              <ul class="inputs-list">
+                <li>
+                  <label>
+                    <input type="checkbox" name="repeat" value="1" />
+                    <span>Monday</span>
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input type="checkbox" name="repeat" value="2" />
+                    <span>Tuesday</span>
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input type="checkbox" name="repeat" value="3" />
+                    <span>Wednsday</span>
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input type="checkbox" name="repeat" value="4" />
+                    <span>Thursday</span>
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input type="checkbox" name="repeat" value="5" />
+                    <span>Friday</span>
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input type="checkbox" name="repeat" value="6" />
+                    <span>Saturday</span>
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input type="checkbox" name="repeat" value="7" />
+                    <span>Sunday</span>
+                  </label>
+                </li>
+              </ul>
+                WARNING! These specials will repeat indefinatly unless canceled under the "Active Specials" tab.
+             
+             <label for="xlInput3">First Day</label>
+              <input class="xlarge span3" id="from" name="xlInput3" size="30" type="text" />
+              
+            <label for="xlInput3">Last Day</label>
+              <input class="xlarge span3" id="to" name="xlInput3" size="30" type="text" />
+              
+            <input type="submit" class="btn large primary" value="Submit Special">&nbsp;<button type="reset" class="btn large">Save Special</button>
+        </fieldset>
+    </form>
+    <% end %>
 </div>

@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :specialss
   attr_accessible :email, :password, :password_confirmation, :type
   has_secure_password
   before_save :create_remember_token
