@@ -10,92 +10,110 @@
 	<div class="span9">
 		<%= @message %>
 		<h1>Post Special</h1>
-			<%= form_for(:special, url: admin_path) do |f| %>
+		<ul class="nav nav-tabs">
+		  <li class="active">
+		    <a href="#">Post Special</a>
+		  </li>
+		  <li><a href="#">Active Specials</a></li>
+		  <li><a href="#">Specials History</a></li>
+		  <li><a href="#">Saved Specials</a></li>
+		</ul>
+			<form class="form-horizontal" action="admin" method="post">
 		 	<fieldset>
         
-            <label for="special">Special Title</label>
-            <input class="xlarge" id="special" name="special[title]" size="30" type="text" />
-   
-            <label for="description">Special Description</label>
-            <textarea class="xxlarge" id="description" name="special[description]" rows="3"></textarea>
-            
+        	<div class="control-group">
+            <label for="special">Special Title:</label>
+            <div class="controls">
+            <input class="input-xlarge" id="special" name="special[title]" size="30" type="text" />
+   			</div>
+   			</div>
+   			
+   			<div class="control-group">	
+            <label for="description">Special Description:</label>
+            <div class="controls">
+            <textarea class="input-xxlarge" id="description" name="special[description]" rows="3"></textarea>
+            </div>
+            </div>
 
-            <label for="terms">Special Terms</label>
-            <textarea class="xxlarge" id="terms" name="special[terms]" rows="3"></textarea>
-                If there are no terms, this will default to: "None, Enjoy!".
-          
+			<div class="control-group">
+            <label for="terms">Special Terms:</label>
+            <div class="controls">
+            <textarea class="input-xxlarge" id="terms" name="special[terms]" rows="3"></textarea>
+                <p class="help-block">If there are no terms, this will default to: "None, Enjoy!".</p>
+            </div>
+          </div>
           <!-- Scheduling Options -->
-            <label id="optionsRadio">Scheduling Options</label>
-              <ul class="inputs-list">
-                <li>
-                  <label>
+           <div class="control-group">
+            <label class="control-label">Scheduling Options:</label>
+              <div class="controls">
+                  <label class="radio">
                     <input type="radio" checked="checked" name="options" id="repeating_box" value="1" />
-                    <span>Schedule Repeating Special</span>
+                    Schedule Repeating Special
                   </label>
-                </li>
-                <li>
-                  <label>
+                  <label class="radio">
                     <input type="radio" name="options" id="one_time_box" value="0" />
-                    <span>Schedule One Time Special</span>
+                    Schedule One Time Special
                   </label>
-                </li>
-              </ul>
-       
-            <label id="optionsCheckboxes">Repeat Every:</label>
-              <ul class="inputs-list">
-                <li>
-                  <label>
+               </div>
+               </div>
+       		
+       		<div class="control-group">	
+            <label class="control-label">Repeat Every:</label>
+                  <div class="controls">
+                  	<label class="checkbox">
                     <input type="checkbox" name="repeat" value="1" />
                     <span>Monday</span>
                   </label>
-                </li>
-                <li>
-                  <label>
+
+                    <label class="checkbox">
                     <input type="checkbox" name="repeat" value="2" />
                     <span>Tuesday</span>
                   </label>
-                </li>
-                <li>
-                  <label>
+                
+                    <label class="checkbox">
                     <input type="checkbox" name="repeat" value="3" />
                     <span>Wednsday</span>
                   </label>
-                </li>
-                <li>
-                  <label>
+
+                    <label class="checkbox">
                     <input type="checkbox" name="repeat" value="4" />
                     <span>Thursday</span>
                   </label>
-                </li>
-                <li>
-                  <label>
+
+                    <label class="checkbox">
                     <input type="checkbox" name="repeat" value="5" />
                     <span>Friday</span>
                   </label>
-                </li>
-                <li>
-                  <label>
+
+                    <label class="checkbox">
                     <input type="checkbox" name="repeat" value="6" />
                     <span>Saturday</span>
                   </label>
-                </li>
-                <li>
-                  <label>
+
+                  <label class="checkbox">
                     <input type="checkbox" name="repeat" value="7" />
                     <span>Sunday</span>
                   </label>
-                </li>
-              </ul>
-                WARNING! These specials will repeat indefinatly unless canceled under the "Active Specials" tab.
+                <p class="help-block">WARNING! These specials will repeat indefinatly unless canceled under the "Active Specials" tab.</p>
+             	</div>
+             	</div>
              
-             <label for="xlInput3">First Day</label>
+             <div class="control-group">
+             <label for="xlInput3">First Day:</label>
+             <div class="controls">
               <input class="xlarge span3" id="from" name="xlInput3" size="30" type="text" />
+             </div>
+              </div>
               
-            <label for="xlInput3">Last Day</label>
+            <div class="control-group">  
+            <label for="xlInput3">Last Day:</label>
+            <div class="controls">
               <input class="xlarge span3" id="to" name="xlInput3" size="30" type="text" />
-              
-            <input type="submit" class="btn large primary" value="Submit Special">&nbsp;<button type="reset" class="btn large">Save Special</button>
+              </div>
+             </div>
+             <div class="form-actions">
+            <button type="submit" class="btn btn-large btn-primary">Submit Special</button>&nbsp;<button type="reset" class="btn btn-large">Save Special</button>
+        	</div>
         </fieldset>
     </form>
-    <% end %>
 </div>

@@ -3,9 +3,12 @@ class AdminController < ApplicationController
   
   def index
     if params[:special] != nil
-    @special = current_user.specialss.new(params[:special])
-    if @special.save   
+    if @special = current_user.specialss.new(params[:special])   
+      # success
+      @special.save
       @message = 'Successfully saved'
+    else
+      # error handling
     end
     end
   end
