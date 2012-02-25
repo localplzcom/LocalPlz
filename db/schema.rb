@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120221064843) do
+ActiveRecord::Schema.define(:version => 20120225182708) do
 
   create_table "business_infos", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -25,10 +25,11 @@ ActiveRecord::Schema.define(:version => 20120221064843) do
     t.integer  "day_of_week"
     t.date     "first_day"
     t.date     "last_day"
-    t.string   "schedule_type",                    :null => false
     t.boolean  "cancelled",     :default => false, :null => false
     t.datetime "created_at",                       :null => false
     t.datetime "updated_at",                       :null => false
+    t.boolean  "schedule_type", :default => false, :null => false
+    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|
@@ -37,7 +38,7 @@ ActiveRecord::Schema.define(:version => 20120221064843) do
     t.datetime "updated_at",      :null => false
     t.string   "password_digest"
     t.string   "remember_token"
-    t.boolean  "type"
+    t.boolean  "account",         :null => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

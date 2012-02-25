@@ -3,10 +3,10 @@ class AdminController < ApplicationController
   
   def index
     if params[:special] != nil
-      title = params[:special]
-      description = params[:description]
-      schedule_type = 0
-      Specials.create({ :title => title, :description => description, :schedule_type => schedule_type })
+    @special = current_user.specialss.new(params[:special])
+    if @special.save   
+      @message = 'Successfully saved'
+    end
     end
   end
   

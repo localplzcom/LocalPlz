@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       sign_in user
       # If the user is a regular user
-      if user.type == 0
+      if user.account == false
         redirect_to root_path
       # If the user is a business user  
       else
